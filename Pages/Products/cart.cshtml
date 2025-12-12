@@ -1,0 +1,53 @@
+@page
+@model FinalProjectEmsGems_1.Pages.Products.CartModel
+
+@{
+    ViewData["Title"] = "Shopping Cart";
+
+<h1 class="text-center" style="color: gold;">Shopping Cart</h1>
+}
+<div class="container mt-4">
+    @if (Model.CartItems != null && Model.CartItems.Count > 0)
+    {
+        <table class="table table-bordered table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th style="color: gold;">Product</th>
+                    <th style="color: gold;">Price</th>
+                    <th style="color: gold;">Quantity</th>
+                    <th style="color: gold;">Total</th>
+                    <th style="color: gold;">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.CartItems)
+                {
+                    <tr>
+                        <td style="color: gold;">@item.Product.Name</td>
+                        <td style="color: gold;">@item.Product.Price.ToString("C")</td>
+                        <td style="color: gold;">@item.Quantity</td>
+                        <td style="color: gold;">@(item.Product.Price * item.Quantity).ToString("C")</td>
+                        <td>
+                            <form method="post" asp-page-handler="RemoveItem">
+                                <input type="hidden" name="productId" value="@item.Product.ProductID" />
+                                <button type="submit" class="btn btn-danger btn-sm">Remove</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div class="text-end">
+            <h4 style="color: gold;">Total Amount: @Model.TotalAmount.ToString("C")</h4>
+            <form method="post" asp-page-handler="Checkout">
+                <button type="submit" class="btn btn-success">Proceed to Checkout</button>
+            </form>
+        </div>
+    }
+    else
+    {
+        <p class="text-center" style="color: gold;">Your cart is empty.</p>
+    }
+</div>
+
+

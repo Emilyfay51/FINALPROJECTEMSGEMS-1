@@ -1,0 +1,25 @@
+@page "{id:int}"
+@model FinalProjectEmsGems_1.Pages_Products.EditReviewModel
+
+@{
+    ViewData["Title"] = "Edit Review";
+}
+
+<h1>Edit Review</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Review.Score" class="control-label"></label>
+        <input asp-for="Review.Score" class="form-control" />
+        <span asp-validation-for="Review.Score" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Review.ReviewText" class="control-label"></label>
+        <textarea asp-for="Review.ReviewText" class="form-control"></textarea>
+        <span asp-validation-for="Review.ReviewText" class="text-danger"></span>
+    </div>
+    <input type="hidden" asp-for="Review.ReviewID" />
+    <input type="hidden" asp-for="Review.ProductID" />
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-page="Details" asp-route-id="@Model.Review.ProductID" class="btn btn-secondary">Cancel</a>
+</form>

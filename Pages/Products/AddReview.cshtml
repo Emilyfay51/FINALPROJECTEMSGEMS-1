@@ -1,0 +1,27 @@
+@page
+@model FinalProjectEmsGems_1.Pages.Products.AddReviewModel
+@{
+    ViewData["Title"] = "Add Review";
+}
+
+<div class="container mt-4">
+    <h2 class="text-center mb-4" style="color: gold;">Add New Review</h2>
+    <form method="post">
+        <div class="mb-3">
+            <label asp-for="Review.ProductID" class="form-label" style="color: gold;"></label>
+            <select asp-for="Review.ProductID" class="form-select" asp-items="Model.ProductList"></select>
+            <span asp-validation-for="Review.ProductID" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Review.Score" class="form-label" style="color: gold;"></label>
+            <input asp-for="Review.Score" class="form-control" type="number" min="1" max="5" />
+            <span asp-validation-for="Review.Score" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Review.ReviewText" class="form-label" style="color: gold;"></label>
+            <textarea asp-for="Review.ReviewText" class="form-control"></textarea>
+            <span asp-validation-for="Review.ReviewText" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-success">Submit Review</button>
+    </form>
+</div>

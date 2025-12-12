@@ -1,0 +1,90 @@
+﻿@page
+@model FinalProjectEmsGems_1.Pages.IndexModel
+@{
+    ViewData["Title"] = "Jewelry Home page";
+}
+
+<div class="text-center">
+        <h1 class="display-4" style="color: gold;">Your One Stop Jewelry Store </h1>
+        <p class="display-7 " style="color: gold;">Welcome to Em's Gems! Discover our exquisite collection of jewelry pieces that sparkle with elegance and charm. Whether you're looking for the perfect gift or a treat for yourself, we have something special for every occasion.</p>
+        <p class="display-7 " style="color: gold;">Browse our selection of rings, necklaces, earrings, and bracelets crafted from the finest materials. At Em's Gems, we believe that every piece of jewelry tells a story – let us help you tell yours.</p>
+        <a class="btn btn-primary btn-lg" asp-page="/Products/Index">Shop Now</a>
+</div>
+
+<div id="gemsCarousel" class="carousel slide my-5" data-bs-ride="carousel">
+    <style>
+        .carousel-inner img {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 18px;
+            border: 3px solid #ffd700;
+            background: #fffbe6;
+            margin: 0 auto;
+            box-shadow: 0 4px 16px 0 rgba(80, 60, 20, 0.18), 0 1.5px 6px 0 rgba(255, 215, 0, 0.12);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .carousel-inner img:hover {
+            transform: scale(1.08) rotate(-2deg);
+            box-shadow: 0 8px 32px 0 rgba(80, 60, 20, 0.28), 0 3px 12px 0 rgba(255, 215, 0, 0.22);
+            border-color: #ffec8b;
+        }
+        .carousel-fancy-bg {
+            background: linear-gradient(120deg, #fffbe6 0%, #ffe4e1 100%);
+            border-radius: 24px;
+            padding: 32px 0 24px 0;
+            box-shadow: 0 8px 32px 0 rgba(80, 60, 20, 0.10);
+            margin-bottom: 2rem;
+        }
+    </style>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="row justify-content-center">
+                <div class="col-2"><img src="/images/emeraldring.jpg" class="d-block w-100" alt="Emerald Ring"></div>
+                <div class="col-2"><img src="/images/sapphirenecklace.jpg" class="d-block w-100" alt="Sapphire Necklace"></div>
+                <div class="col-2"><img src="/images/rubyearrings.jpg" class="d-block w-100" alt="Ruby Earrings"></div>
+                <div class="col-2"><img src="/images/topazbracelet.jpg" class="d-block w-100" alt="Topaz Bracelet"></div>
+                <div class="col-2"><img src="/images/amethystpendant.jpg" class="d-block w-100" alt="Amethyst Pendant"></div>
+                <div class="col-2"><img src="/images/diamondring.jpg" class="d-block w-100" alt="Diamond Ring"></div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="row justify-content-center">
+                <div class="col-2"><img src="/images/pearlnecklace.jpg" class="d-block w-100" alt="Pearl Necklace"></div>
+                <div class="col-2"><img src="/images/opalearrings.jpg" class="d-block w-100" alt="Opal Earrings"></div>
+                <div class="col-2"><img src="/images/garnetbracelet.jpg" class="d-block w-100" alt="Garnet Bracelet"></div>
+                <div class="col-2"><img src="/images/citrinependant.jpg" class="d-block w-100" alt="Citrine Pendant"></div>
+                <div class="col-2"><img src="/images/aquamarinering.jpg" class="d-block w-100" alt="Aquamarine Ring"></div>
+                <div class="col-2"><img src="/images/turquoisenecklace.jpg" class="d-block w-100" alt="Turquoise Necklace"></div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="row justify-content-center">
+                <div class="col-2"><img src="/images/onyxearrings.jpg" class="d-block w-100" alt="Onyx Earrings"></div>
+                <div class="col-2"><img src="/images/peridotbracelet.jpg" class="d-block w-100" alt="Peridot Bracelet"></div>
+                <div class="col-2"><img src="/images/spinelpendant.jpg" class="d-block w-100" alt="Spinel Pendant"></div>
+                <div class="col-2"><img src="/images/bluetopazring.jpg" class="d-block w-100" alt="Blue Topaz Ring"></div>
+                <div class="col-2"><img src="/images/moonstonenecklace.jpg" class="d-block w-100" alt="Moonstone Necklace"></div>
+                <div class="col-2"><img src="/images/lapisearrings.jpg" class="d-block w-100" alt="Lapis Earrings"></div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="row justify-content-center">
+                <div class="col-2"><img src="/images/chrysoberylbracelet.jpg" class="d-block w-100" alt="Chrysoberyl Bracelet"></div>
+                <div class="col-2"><img src="/images/tourmalinependant.jpg" class="d-block w-100" alt="Tourmaline Pendant"></div>
+                <div class="col-2"><img src="/images/jadering.jpg" class="d-block w-100" alt="Jade Ring"></div>
+                <div class="col-2"><img src="/images/carneliannecklace.jpg" class="d-block w-100" alt="Carnelian Necklace"></div>
+                <div class="col-2"><img src="/images/smokyquartzearrings.jpg" class="d-block w-100" alt="Smoky Quartz Earrings"></div>
+                <div class="col-2"><img src="/images/spinelbracelet.jpg" class="d-block w-100" alt="Spinel Bracelet"></div>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#gemsCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#gemsCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
